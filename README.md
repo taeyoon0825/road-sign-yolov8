@@ -136,6 +136,3 @@ kotlin
 ```
 (선택) 학습/예측 결과(runs/)는 용량이 커질 수 있어 필요한 파일만 포함하거나 Git LFS를 사용하는 것을 권장합니다.
 
-makefile
-코드 복사
-::contentReference[oaicite:0]{index=0}
