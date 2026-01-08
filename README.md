@@ -31,8 +31,7 @@ data/
 ├─ images/ (877 images)
 └─ annotations/ (877 xml)
 ```
-markdown
-코드 복사
+
 
 ### YOLO 학습용 구조로 변환
 - VOC(XML) → YOLO(txt) 변환
@@ -49,8 +48,6 @@ road_sign_yolo/
 └─ val/
 ```
 
-makefile
-코드 복사
 
 ### data.yaml
 ```
@@ -81,13 +78,13 @@ batch=16
 
 Train Command
 bash
-코드 복사
+```
 pip -q install ultralytics
 yolo detect train data=/content/data.yaml model=yolov8n.pt epochs=50 imgsz=640 batch=16 project=/content/runs name=roadsign
+```
 학습 결과 저장 위치:
 
 swift
-코드 복사
 ```
 /content/runs/detect/roadsign/
  ├─ results.png
@@ -100,13 +97,15 @@ swift
 
 Predict Command
 bash
-코드 복사
+```
 yolo detect predict model=/content/runs/detect/roadsign/weights/best.pt source=/content/road_sign_yolo/images/val save=True conf=0.25 project=/content/runs name=pred_roadsign
+```
 결과 저장 위치:
 
 swift
-코드 복사
+```
 /content/runs/pred_roadsign/
+```
 실행 로그 예시(요약)
 speedlimit, trafficlight, stop, crosswalk 객체가 정상적으로 탐지됨
 
@@ -127,12 +126,9 @@ YOLOv8 학습(train)
 
 7) 레포 구조 (예시)
 kotlin
-코드 복사
-
 ```
 ├─ RoadSign_YOLOv8.ipynb
 ├─ data.yaml
 └─ README.md
 ```
 (선택) 학습/예측 결과(runs/)는 용량이 커질 수 있어 필요한 파일만 포함하거나 Git LFS를 사용하는 것을 권장합니다.
-
