@@ -26,10 +26,11 @@ Kaggle **Road Sign Detection** 데이터셋을 활용해 **YOLOv8 기반 객체 
 
 ## 3) 데이터셋 준비 (YOLO 형식 변환)
 원본 데이터 구조(수동 정리):
+```
 data/
 ├─ images/ (877 images)
 └─ annotations/ (877 xml)
-
+```
 markdown
 코드 복사
 
@@ -52,13 +53,15 @@ makefile
 코드 복사
 
 ### data.yaml
-```yaml
+```
+yaml
 path: /content/road_sign_yolo
 train: images/train
 val: images/val
 
 nc: 4
 names: [trafficlight, stop, speedlimit, crosswalk]
+```
 4) YOLOv8 학습 (Train)
 Environment
 Google Colab GPU: Tesla T4
