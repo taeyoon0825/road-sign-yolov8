@@ -38,6 +38,7 @@ markdown
 - Split: `train/val = 8:2` (random seed = 42)
 
 변환 후 구조:
+```
 road_sign_yolo/
 ├─ images/
 │ ├─ train/
@@ -45,6 +46,7 @@ road_sign_yolo/
 └─ labels/
 ├─ train/
 └─ val/
+```
 
 makefile
 코드 복사
@@ -83,11 +85,13 @@ yolo detect train data=/content/data.yaml model=yolov8n.pt epochs=50 imgsz=640 b
 
 swift
 코드 복사
+```
 /content/runs/detect/roadsign/
  ├─ results.png
  └─ weights/
     ├─ best.pt
     └─ last.pt
+```
 5) 객체 탐지 테스트 (Predict)
 학습된 best.pt를 사용해 validation 이미지에 대해 탐지를 수행했습니다.
 
@@ -121,10 +125,12 @@ YOLOv8 학습(train)
 7) 레포 구조 (예시)
 kotlin
 코드 복사
-.
+
+```
 ├─ RoadSign_YOLOv8.ipynb
 ├─ data.yaml
 └─ README.md
+```
 (선택) 학습/예측 결과(runs/)는 용량이 커질 수 있어 필요한 파일만 포함하거나 Git LFS를 사용하는 것을 권장합니다.
 
 makefile
