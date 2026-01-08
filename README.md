@@ -59,7 +59,9 @@ val: images/val
 nc: 4
 names: [trafficlight, stop, speedlimit, crosswalk]
 ```
-4) YOLOv8 학습 (Train)
+---
+
+## 4) YOLOv8 학습 (Train)
 Environment
 Google Colab GPU: Tesla T4
 
@@ -92,7 +94,9 @@ swift
     ├─ best.pt
     └─ last.pt
 ```
-5) 객체 탐지 테스트 (Predict)
+---
+
+## 5) 객체 탐지 테스트 (Predict)
 학습된 best.pt를 사용해 validation 이미지에 대해 탐지를 수행했습니다.
 
 Predict Command
@@ -111,7 +115,9 @@ speedlimit, trafficlight, stop, crosswalk 객체가 정상적으로 탐지됨
 
 일부 이미지는 (no detections)가 발생할 수 있으며 이는 confidence threshold, 표지판 크기/가림(occlusion), 조명 등의 영향을 받을 수 있음
 
-6) 실행 방법 요약
+---
+
+## 6) 실행 방법 요약
 Kaggle 데이터셋 다운로드
 
 data/images, data/annotations 구조로 정리
@@ -124,7 +130,9 @@ YOLOv8 학습(train)
 
 학습 모델로 예측(predict) 및 결과 저장
 
-7) 레포 구조 (예시)
+---
+
+## 7) 레포 구조 (예시)
 kotlin
 ```
 ├─ RoadSign_YOLOv8.ipynb
